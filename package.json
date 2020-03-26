@@ -1,0 +1,11 @@
+{
+  "name": "tyk-mock-api",
+  "version": "1.0.0",
+  "description": "an api to test the tyk gateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
