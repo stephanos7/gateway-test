@@ -1,0 +1,24 @@
+
+# Dependency directories
+node_modules/
+
+# Logs
+logs
+*.log
+*.logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pip-log.txt
+pip-delete-this-directory.txt
+/var/logs/*
+
+
+# OS or Editor folders
+.env
+._*
+.cache
+.Cache
+.DS_Store
+.idea
+.project
