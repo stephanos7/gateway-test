@@ -1,4 +1,5 @@
 var express = require("express");
+const { pool } = require('./config')
 
 // define middleware
 var bodyParser = require("body-parser");
@@ -17,8 +18,24 @@ app.use(bodyParser.urlencoded({
 
 app.use(morgan(`:method :url :status :res[content-length] - :response-time ms`))
 
+// API Operations
+const getAllBooks = (req, res) => {
+  // res.json(["hello from the index service"]);
+
+  pool.query('SELECT * FROM books',(err, result) => {
+    if(err){
+      throw err
+    }
+    return res.status(200).json(result.rows)
+  })
+}
+
+
+// routes
 app.get("/", (req, res, next) => {
-  res.json(["hello from the index service"]);
+  
+  return getAllBooks(req,res);
+  // res.json(["hello from the index service"]);
  });
 
  app.listen(process.env.PORT || 3500, () => {
