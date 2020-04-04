@@ -2,7 +2,7 @@ var express = require("express");
 
 // define middleware
 var bodyParser = require("body-parser");
-
+var morgan = require('morgan');
 // instantiate express server
 var app = express();
 
@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended:true
 }))
+
+app.use(morgan(`:method :url :status :res[content-length] - :response-time ms`))
 
 app.get("/", (req, res, next) => {
   res.json(["hello from the index service"]);
