@@ -33,7 +33,6 @@ const getAllBooks = (req, res) => {
 
 // routes
 app.get("/", (req, res, next) => {
-  
   return getAllBooks(req,res);
   // res.json(["hello from the index service"]);
  });
