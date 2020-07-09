@@ -43,6 +43,8 @@ app.get("/", (req, res, next) => {
   // res.json(["hello from the index service"]);
  });
 
- app.listen(process.env.PORT || 3500, () => {
+ app.listen(process.env.PORT || 8080, () => {
   console.log(`Server listening`)
 })        
+
+
