@@ -18,16 +18,22 @@ app.use(bodyParser.urlencoded({
 
 app.use(morgan(`:method :url :status :res[content-length] - :response-time ms`))
 
+
+
 // API Operations
-const getAllBooks = (req, res) => {
+const getAllBooks = (req, res, err) => {
   // res.json(["hello from the index service"]);
 
-  pool.query('SELECT * FROM books',(err, result) => {
+  // pool.query('SELECT * FROM books',(err, result) => {
+  //   if(err){
+  //     throw err
+  //   }
+  //   return res.status(200).json(result.rows)
+  // })
     if(err){
       throw err
     }
-    return res.status(200).json(result.rows)
-  })
+    return res.status(200).json("hello local world")
 }
 
 
